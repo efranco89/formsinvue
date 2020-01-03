@@ -71,9 +71,16 @@
       </div>
       <!-- Ends dropdown -->
 
-    </form>
+      <div class="row">
+        <div class="col-sm-8 col-md-6">
+          <br>
+          <button class="btn btn-primary" @click.prevent="sentMethod">Enviar</button>
+        </div>
+      </div>
 
-    <div class="row">
+    </form>
+    <br>
+    <div class="row" v-if="sent">
       <div class="col-sm-8 col-md-6">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -114,8 +121,14 @@
         mailOptions: [],
         gender: 'M',
         schedule: 'Manhana',
-        scheduleData: ['Manhana', 'Tarde', 'Noche', 'Medio dia']
+        scheduleData: ['Manhana', 'Tarde', 'Noche', 'Medio dia'], 
+        sent: false
 
+      }
+    },
+    methods: {
+      sentMethod(){
+        this.sent = true;
       }
     }
   }
