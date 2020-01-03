@@ -29,6 +29,20 @@
           </div>
         </div>
       </div>
+      <!-- Ends messages -->
+
+      <div class="row">
+        <div class="col-sm-8 col-md-6">
+          <div class="form-group">
+            <label for="enviaremail">
+              <input type="checkbox" id="enviaremail" value="enviarmail" v-model="mailOptions"> Enviar email
+            </label>&nbsp;&nbsp;
+            <label for="enviarmecopia">
+              <input type="checkbox" id="enviarmecopia" value="enviarcopia" v-model="mailOptions"> Enviar copia
+            </label>
+          </div>
+        </div>
+      </div>
     </form>
 
     <div class="row">
@@ -42,6 +56,14 @@
             <p>Nombre: {{ personData.nombre }} </p>
             <p>Correo: {{ personData.email }} </p>
             <p style="white-space:pre">Mensaje: <br> {{ message }} </p>
+            <p>
+              Opciones de Envio:
+              <ul>
+                <li v-for="item in mailOptions" :key="item"> 
+                  {{ item }}
+                </li>
+              </ul>
+            </p>
           </div>
         </div>
       </div>
@@ -58,7 +80,8 @@
           nombre: '',
           email: ''
         },
-        message: 'Test de mensaje'
+        message: 'Test de mensaje',
+        mailOptions: []
 
       }
     }
