@@ -8,12 +8,12 @@
           <hr>
           <div class="form-group">
             <label for="name">Nombre</label>
-            <input type="text" id="name" class="form-control" v-model='nombre'>
+            <input type="text" id="name" class="form-control" v-model='personData.nombre'>
           </div>
           <!-- Ends name -->
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" id="email" class="form-control" v-model='email'>
+            <input type="text" id="email" class="form-control" v-model='personData.email'>
           </div>
           <!-- Ends email -->
 
@@ -29,8 +29,8 @@
           </div>
 
           <div class="panel-body">
-            <p>Nombre: {{ nombre }} </p>
-            <p>Correo: {{ email }} </p>
+            <p>Nombre: {{ personData.nombre }} </p>
+            <p>Correo: {{ personData.email }} </p>
           </div>
         </div>
       </div>
@@ -43,8 +43,10 @@
     name: 'poll',
     data(){
       return {
-        nombre: '',
-        email: ''
+        personData:{
+          nombre: '',
+          email: ''
+        }
 
       }
     }
