@@ -43,6 +43,22 @@
           </div>
         </div>
       </div>
+      <!-- Ends checkboxes -->
+
+      <div class="row">
+        <div class="col-sm-8 col-md-6">
+          <div class="form-group">
+            <label for="masculino">
+              <input type="radio" id="masculino" value="M" v-model="gender"> Masculino
+            </label>&nbsp;&nbsp;
+            <label for="femenino">
+              <input type="radio" id="femenino" value="F" v-model="gender"> Femenino
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- Ends radiobuttons -->
+
     </form>
 
     <div class="row">
@@ -64,6 +80,7 @@
                 </li>
               </ul>
             </p>
+            <p>Genero: {{ gender }}</p>
           </div>
         </div>
       </div>
@@ -81,7 +98,8 @@
           email: ''
         },
         message: 'Test de mensaje',
-        mailOptions: []
+        mailOptions: [],
+        gender: 'M'
 
       }
     }
