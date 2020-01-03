@@ -59,6 +59,18 @@
       </div>
       <!-- Ends radiobuttons -->
 
+      <div class="row">
+        <div class="col-sm-8 col-md-6">
+          
+          <label for="horario"> Horario </label>
+          <select id="horario" class="form-control" v-model="schedule">
+            <option :value="item" v-for="item in scheduleData" :key="item"> {{ item }} </option>
+          </select>
+          
+        </div>
+      </div>
+      <!-- Ends dropdown -->
+
     </form>
 
     <div class="row">
@@ -81,6 +93,7 @@
               </ul>
             </p>
             <p>Genero: {{ gender }}</p>
+            <p>Horario: {{ schedule }}</p>
           </div>
         </div>
       </div>
@@ -99,7 +112,9 @@
         },
         message: 'Test de mensaje',
         mailOptions: [],
-        gender: 'M'
+        gender: 'M',
+        schedule: 'Manhana',
+        scheduleData: ['Manhana', 'Tarde', 'Noche', 'Medio dia']
 
       }
     }
