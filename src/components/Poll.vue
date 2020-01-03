@@ -19,18 +19,29 @@
 
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-8 col-md-6">
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" cols="58" rows="5" class="form-control"
+              v-model="message">
+            </textarea>
+          </div>
+        </div>
+      </div>
     </form>
 
     <div class="row">
       <div class="col-sm-8 col-md-6">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3>Datos</h3>
+            <h3>Datos ingresados</h3>
           </div>
 
           <div class="panel-body">
             <p>Nombre: {{ personData.nombre }} </p>
             <p>Correo: {{ personData.email }} </p>
+            <p style="white-space:pre">Mensaje: <br> {{ message }} </p>
           </div>
         </div>
       </div>
@@ -46,7 +57,8 @@
         personData:{
           nombre: '',
           email: ''
-        }
+        },
+        message: 'Test de mensaje'
 
       }
     }
